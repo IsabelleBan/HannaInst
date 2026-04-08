@@ -1,0 +1,672 @@
+{% doc %}
+  @prompt
+    a section with 3 different blocks that should show 3 blocks that you can youse different guides from , det ska vara 3 sectioner vågärtt, lägg rubriken över och en box runt varje guide, ingen skugga på boxen utan en bakgrundfärig i varje box istället, en call to action knapp under texten
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-guides-grid-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+  }
+
+  .ai-guides-header-{{ ai_gen_id }} {
+    text-align: {{ block.settings.heading_alignment }};
+    margin-bottom: {{ block.settings.heading_spacing }}px;
+  }
+
+  .ai-guides-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.heading_color }};
+    margin: 0;
+  }
+
+  .ai-guides-container-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: {{ block.settings.gap }}px;
+    width: 100%;
+    padding: 0 18px;
+  }
+
+  .ai-guide-card-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: {{ block.settings.card_padding }}px;
+    border-radius: {{ block.settings.card_border_radius }}px;
+    border: {{ block.settings.card_border_width }}px solid {{ block.settings.card_border_color }};
+    height: 100%;
+  }
+
+  .ai-guide-card-1-{{ ai_gen_id }} {
+    background-color: {{ block.settings.card_1_background }};
+  }
+
+  .ai-guide-card-2-{{ ai_gen_id }} {
+    background-color: {{ block.settings.card_2_background }};
+  }
+
+  .ai-guide-card-3-{{ ai_gen_id }} {
+    background-color: {{ block.settings.card_3_background }};
+  }
+
+  .ai-guide-image-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: {{ block.settings.image_border_radius }}px;
+  }
+
+  .ai-guide-image-{{ ai_gen_id }} {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+  .ai-guide-image-placeholder-{{ ai_gen_id }} {
+    background-color: #f4f4f4;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-guide-image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 150px;
+    max-height: 150px;
+  }
+
+  .ai-guide-content-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1;
+  }
+
+  .ai-guide-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.title_color }};
+    margin: 0;
+  }
+
+  .ai-guide-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.description_size }}px;
+    color: {{ block.settings.description_color }};
+    line-height: 1.6;
+  }
+
+  .ai-guide-button-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    background-color: {{ block.settings.button_background }};
+    color: {{ block.settings.button_text_color }};
+    text-decoration: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    margin-top: auto;
+  }
+
+  .ai-guide-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_background }};
+    color: {{ block.settings.button_hover_text_color }};
+  }
+
+  .ai-guides-cta-wrapper-{{ ai_gen_id }} {
+    text-align: {{ block.settings.cta_alignment }};
+    margin-top: {{ block.settings.cta_spacing }}px;
+  }
+
+  .ai-guides-cta-button-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    background-color: {{ block.settings.cta_background }};
+    color: {{ block.settings.cta_text_color }};
+    text-decoration: none;
+    border-radius: {{ block.settings.cta_border_radius }}px;
+    font-weight: 700;
+    font-size: {{ block.settings.cta_font_size }}px;
+    transition: all 0.3s ease;
+  }
+
+  .ai-guides-cta-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.cta_hover_background }};
+    color: {{ block.settings.cta_hover_text_color }};
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-guides-container-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ai-guides-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.85 }}px;
+    }
+
+    .ai-guides-cta-button-{{ ai_gen_id }} {
+      font-size: {{ block.settings.cta_font_size | times: 0.9 }}px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-guides-container-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: {{ block.settings.gap | times: 0.7 }}px;
+    }
+
+    .ai-guide-card-{{ ai_gen_id }} {
+      padding: {{ block.settings.card_padding | times: 0.7 }}px;
+    }
+
+    .ai-guides-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.7 }}px;
+    }
+
+    .ai-guide-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.85 }}px;
+    }
+
+    .ai-guide-description-{{ ai_gen_id }} {
+      font-size: {{ block.settings.description_size | times: 0.9 }}px;
+    }
+
+    .ai-guides-cta-button-{{ ai_gen_id }} {
+      font-size: {{ block.settings.cta_font_size | times: 0.8 }}px;
+      padding: 14px 28px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-guides-grid-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.section_heading != blank %}
+    <div class="ai-guides-header-{{ ai_gen_id }}">
+      <h2 class="ai-guides-heading-{{ ai_gen_id }}">{{ block.settings.section_heading }}</h2>
+    </div>
+  {% endif %}
+
+  <div class="ai-guides-container-{{ ai_gen_id }}">
+    {% for i in (1..3) %}
+      {% liquid
+        assign image_key = 'guide_' | append: i | append: '_image'
+        assign title_key = 'guide_' | append: i | append: '_title'
+        assign description_key = 'guide_' | append: i | append: '_description'
+        assign button_text_key = 'guide_' | append: i | append: '_button_text'
+        assign button_link_key = 'guide_' | append: i | append: '_button_link'
+
+        assign guide_image = block.settings[image_key]
+        assign guide_title = block.settings[title_key]
+        assign guide_description = block.settings[description_key]
+        assign guide_button_text = block.settings[button_text_key]
+        assign guide_button_link = block.settings[button_link_key]
+      %}
+
+      <div class="ai-guide-card-{{ ai_gen_id }} ai-guide-card-{{ i }}-{{ ai_gen_id }}">
+        {% if guide_title != blank %}
+          <h3 class="ai-guide-title-{{ ai_gen_id }}">{{ guide_title }}</h3>
+        {% endif %}
+
+        <div class="ai-guide-image-wrapper-{{ ai_gen_id }}">
+          {% if guide_image %}
+            <img
+              src="{{ guide_image | image_url: width: 600 }}"
+              alt="{{ guide_image.alt | escape }}"
+              loading="lazy"
+              width="{{ guide_image.width }}"
+              height="{{ guide_image.height }}"
+              class="ai-guide-image-{{ ai_gen_id }}"
+            >
+          {% else %}
+            <div class="ai-guide-image-placeholder-{{ ai_gen_id }}">
+              {{ 'image' | placeholder_svg_tag }}
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="ai-guide-content-{{ ai_gen_id }}">
+          {% if guide_description != blank %}
+            <div class="ai-guide-description-{{ ai_gen_id }}">
+              {{ guide_description }}
+            </div>
+          {% endif %}
+
+          {% if guide_button_text != blank and guide_button_link != blank %}
+            <a href="{{ guide_button_link }}" class="ai-guide-button-{{ ai_gen_id }}">
+              {{ guide_button_text }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  {% if block.settings.cta_text != blank and block.settings.cta_link != blank %}
+    <div class="ai-guides-cta-wrapper-{{ ai_gen_id }}">
+      <a href="{{ block.settings.cta_link }}" class="ai-guides-cta-button-{{ ai_gen_id }}">
+        {{ block.settings.cta_text }}
+      </a>
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Guides grid",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section heading"
+    },
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Heading",
+      "default": "Our guides"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#1d349a"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "heading_spacing",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Spacing below heading",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Gap between guides",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Card style"
+    },
+    {
+      "type": "color",
+      "id": "card_1_background",
+      "label": "Card 1 background",
+      "default": "#f0f2ff"
+    },
+    {
+      "type": "color",
+      "id": "card_2_background",
+      "label": "Card 2 background",
+      "default": "#fff4e6"
+    },
+    {
+      "type": "color",
+      "id": "card_3_background",
+      "label": "Card 3 background",
+      "default": "#e6f7f0"
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "card_border_width",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Border color",
+      "default": "#e5e5e5"
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Image border radius",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Text style"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 16,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Title size",
+      "default": 22
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#1d349a"
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Card button style"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Background",
+      "default": "#ffbb35"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#1d349a"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_background",
+      "label": "Hover background",
+      "default": "#1d349a"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Hover text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Call to action button"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button text",
+      "default": "View all guides"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "cta_alignment",
+      "label": "Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "cta_spacing",
+      "min": 20,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Spacing above button",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "cta_font_size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "cta_background",
+      "label": "Background",
+      "default": "#1d349a"
+    },
+    {
+      "type": "color",
+      "id": "cta_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "cta_hover_background",
+      "label": "Hover background",
+      "default": "#ffbb35"
+    },
+    {
+      "type": "color",
+      "id": "cta_hover_text_color",
+      "label": "Hover text color",
+      "default": "#1d349a"
+    },
+    {
+      "type": "range",
+      "id": "cta_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Guide 1"
+    },
+    {
+      "type": "text",
+      "id": "guide_1_title",
+      "label": "Title",
+      "default": "Guide 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "guide_1_image",
+      "label": "Image"
+    },
+    {
+      "type": "richtext",
+      "id": "guide_1_description",
+      "label": "Description",
+      "default": "<p>Add a description for your first guide here.</p>"
+    },
+    {
+      "type": "text",
+      "id": "guide_1_button_text",
+      "label": "Button text",
+      "default": "Read guide"
+    },
+    {
+      "type": "url",
+      "id": "guide_1_button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Guide 2"
+    },
+    {
+      "type": "text",
+      "id": "guide_2_title",
+      "label": "Title",
+      "default": "Guide 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "guide_2_image",
+      "label": "Image"
+    },
+    {
+      "type": "richtext",
+      "id": "guide_2_description",
+      "label": "Description",
+      "default": "<p>Add a description for your second guide here.</p>"
+    },
+    {
+      "type": "text",
+      "id": "guide_2_button_text",
+      "label": "Button text",
+      "default": "Read guide"
+    },
+    {
+      "type": "url",
+      "id": "guide_2_button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Guide 3"
+    },
+    {
+      "type": "text",
+      "id": "guide_3_title",
+      "label": "Title",
+      "default": "Guide 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "guide_3_image",
+      "label": "Image"
+    },
+    {
+      "type": "richtext",
+      "id": "guide_3_description",
+      "label": "Description",
+      "default": "<p>Add a description for your third guide here.</p>"
+    },
+    {
+      "type": "text",
+      "id": "guide_3_button_text",
+      "label": "Button text",
+      "default": "Read guide"
+    },
+    {
+      "type": "url",
+      "id": "guide_3_button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Guides grid"
+    }
+  ]
+}
+{% endschema %}

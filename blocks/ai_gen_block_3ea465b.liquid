@@ -1,0 +1,493 @@
+{% doc %}
+  @prompt
+    Could you generate 4 responsive boxes that will be placed under a Shopify custom Liquid section?
+    Requirements:
+    
+    All four boxes should be displayed beside each other in a row (responsive: 1 column on mobile, 2 on tablet, 4 on desktop).
+    
+    Each box should have:
+    
+    An image or SVG at the top.
+    
+    A title below the image.
+    
+    Some paragraph text below the title.
+    
+    Optional list items (bullets) under the paragraph.
+    
+    Keep the styling clean and minimal, using a light background for the boxes.
+    
+    The boxes should have consistent padding and height.
+    
+    The generated code should be ready to copy into a Shopify custom Liquid section, using proper HTML, classes, and inline styles where necessary.
+    
+    Ensure it is easy to replace the images, titles, and text later in Shopify admin.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-info-boxes-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+  }
+
+  .ai-info-boxes-container-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: {{ block.settings.gap }}px;
+  }
+
+  .ai-info-box-{{ ai_gen_id }} {
+    background-color: {{ block.settings.box_background }};
+    padding: {{ block.settings.box_padding }}px;
+    border-radius: {{ block.settings.border_radius }}px;
+    display: flex;
+    flex-direction: column;
+    align-items: {{ block.settings.content_alignment }};
+    text-align: {{ block.settings.content_alignment }};
+    height: 100%;
+  }
+
+  .ai-info-box-image-wrapper-{{ ai_gen_id }} {
+    width: 100%;
+    max-width: {{ block.settings.image_width }}px;
+    margin-bottom: {{ block.settings.spacing_after_image }}px;
+  }
+
+  .ai-info-box-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .ai-info-box-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+  }
+
+  .ai-info-box-image-placeholder-{{ ai_gen_id }} svg {
+    width: 60%;
+    height: 60%;
+    opacity: 0.3;
+  }
+
+  .ai-info-box-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    font-weight: {{ block.settings.title_weight }};
+    color: {{ block.settings.title_color }};
+    margin: 0 0 {{ block.settings.spacing_after_title }}px 0;
+  }
+
+  .ai-info-box-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.text_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 {{ block.settings.spacing_after_text }}px 0;
+    line-height: 1.5;
+  }
+
+  .ai-info-box-list-{{ ai_gen_id }} {
+    list-style: disc;
+    padding-left: 20px;
+    margin: 0;
+    font-size: {{ block.settings.text_size }}px;
+    color: {{ block.settings.text_color }};
+    line-height: 1.6;
+  }
+
+  .ai-info-box-list-{{ ai_gen_id }} li {
+    margin-bottom: 8px;
+  }
+
+  .ai-info-box-list-{{ ai_gen_id }} li:last-child {
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-info-boxes-container-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-info-boxes-container-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+  }
+{% endstyle %}
+
+<info-boxes-{{ ai_gen_id }} class="ai-info-boxes-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-info-boxes-container-{{ ai_gen_id }}">
+    {% for i in (1..4) %}
+      {% liquid
+        assign box_image_key = 'box_' | append: i | append: '_image'
+        assign box_title_key = 'box_' | append: i | append: '_title'
+        assign box_text_key = 'box_' | append: i | append: '_text'
+        assign box_list_key = 'box_' | append: i | append: '_list'
+
+        assign box_image = block.settings[box_image_key]
+        assign box_title = block.settings[box_title_key]
+        assign box_text = block.settings[box_text_key]
+        assign box_list = block.settings[box_list_key]
+      %}
+
+      <div class="ai-info-box-{{ ai_gen_id }}">
+        <div class="ai-info-box-image-wrapper-{{ ai_gen_id }}">
+          {% if box_image %}
+            <img
+              src="{{ box_image | image_url: width: 400 }}"
+              alt="{{ box_image.alt | escape }}"
+              loading="lazy"
+              width="{{ box_image.width }}"
+              height="{{ box_image.height }}"
+              class="ai-info-box-image-{{ ai_gen_id }}"
+            >
+          {% else %}
+            <div class="ai-info-box-image-placeholder-{{ ai_gen_id }}">
+              {{ 'image' | placeholder_svg_tag }}
+            </div>
+          {% endif %}
+        </div>
+
+        {% if box_title != blank %}
+          <h3 class="ai-info-box-title-{{ ai_gen_id }}">{{ box_title }}</h3>
+        {% endif %}
+
+        {% if box_text != blank %}
+          <div class="ai-info-box-text-{{ ai_gen_id }}">{{ box_text }}</div>
+        {% endif %}
+
+        {% if box_list != blank %}
+          {% assign list_items = box_list | split: ',' %}
+          <ul class="ai-info-box-list-{{ ai_gen_id }}">
+            {% for item in list_items %}
+              {% assign trimmed_item = item | strip %}
+              {% if trimmed_item != blank %}
+                <li>{{ trimmed_item }}</li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</info-boxes-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class InfoBoxes{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+      }
+    }
+
+    customElements.define('info-boxes-{{ ai_gen_id }}', InfoBoxes{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Info boxes",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Gap between boxes",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "box_padding",
+      "label": "Box padding",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Content alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "box_background",
+      "label": "Box background",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#666666"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title size",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "select",
+      "id": "title_weight",
+      "label": "Title weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "label": "Image width",
+      "min": 40,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "spacing_after_image",
+      "label": "Space after image",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "spacing_after_title",
+      "label": "Space after title",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "spacing_after_text",
+      "label": "Space after text",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Box 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "box_1_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "box_1_title",
+      "label": "Title",
+      "default": "Feature 1"
+    },
+    {
+      "type": "textarea",
+      "id": "box_1_text",
+      "label": "Text",
+      "default": "Add a short description of this feature or benefit."
+    },
+    {
+      "type": "textarea",
+      "id": "box_1_list",
+      "label": "List items",
+      "info": "Separate items with commas. Example: Item 1, Item 2, Item 3"
+    },
+    {
+      "type": "header",
+      "content": "Box 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "box_2_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "box_2_title",
+      "label": "Title",
+      "default": "Feature 2"
+    },
+    {
+      "type": "textarea",
+      "id": "box_2_text",
+      "label": "Text",
+      "default": "Add a short description of this feature or benefit."
+    },
+    {
+      "type": "textarea",
+      "id": "box_2_list",
+      "label": "List items",
+      "info": "Separate items with commas. Example: Item 1, Item 2, Item 3"
+    },
+    {
+      "type": "header",
+      "content": "Box 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "box_3_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "box_3_title",
+      "label": "Title",
+      "default": "Feature 3"
+    },
+    {
+      "type": "textarea",
+      "id": "box_3_text",
+      "label": "Text",
+      "default": "Add a short description of this feature or benefit."
+    },
+    {
+      "type": "textarea",
+      "id": "box_3_list",
+      "label": "List items",
+      "info": "Separate items with commas. Example: Item 1, Item 2, Item 3"
+    },
+    {
+      "type": "header",
+      "content": "Box 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "box_4_image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "box_4_title",
+      "label": "Title",
+      "default": "Feature 4"
+    },
+    {
+      "type": "textarea",
+      "id": "box_4_text",
+      "label": "Text",
+      "default": "Add a short description of this feature or benefit."
+    },
+    {
+      "type": "textarea",
+      "id": "box_4_list",
+      "label": "List items",
+      "info": "Separate items with commas. Example: Item 1, Item 2, Item 3"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Info boxes"
+    }
+  ]
+}
+{% endschema %}

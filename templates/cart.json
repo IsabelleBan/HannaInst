@@ -1,0 +1,157 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs_96z8tE": {
+      "type": "breadcrumbs",
+      "settings": {
+        "container": "fixed",
+        "text_alignment": "start",
+        "padding_top": 16,
+        "padding_bottom": 20
+      }
+    },
+    "main-cart": {
+      "type": "main-cart",
+      "blocks": {
+        "cart_note_qpALBg": {
+          "type": "cart_note",
+          "settings": {}
+        },
+        "subtotal_LeUiVY": {
+          "type": "subtotal",
+          "settings": {}
+        },
+        "buttons_drwbch": {
+          "type": "buttons",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "cart_note_qpALBg",
+        "subtotal_LeUiVY",
+        "buttons_drwbch"
+      ],
+      "settings": {
+        "container": "fixed",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "1774958402f3d4b4bb": {
+      "type": "apps",
+      "blocks": {
+        "eu_tax_exemption_easy_tax_widget_bHCmn3": {
+          "type": "shopify://apps/eu-tax-exemption-easy/blocks/tax_widget/0199fec2-bb6e-7a4c-aa45-09892d0d3042",
+          "settings": {
+            "background_color": "#ffffff",
+            "border_color": "#dddddd",
+            "border_width": 1,
+            "border_radius": 8,
+            "widget_padding": 20,
+            "widget_max_width": 360,
+            "container_max_width": 0,
+            "widget_alignment": "right",
+            "full_width_mobile": true,
+            "margin_top": 10,
+            "margin_bottom": 20,
+            "margin_left": 0,
+            "margin_right": 0,
+            "title_color": "#185ba9",
+            "title_font_size": 20,
+            "subtitle_color": "#666666",
+            "subtitle_font_size": 14,
+            "label_color": "#000000",
+            "label_font_size": 14,
+            "input_background_color": "#ffffff",
+            "input_text_color": "#000000",
+            "input_border_color": "#cccccc",
+            "input_border_radius": 4,
+            "input_padding": 8,
+            "button_color": "#015eb8",
+            "button_text_color": "#ffffff",
+            "button_border_radius": 30,
+            "button_padding": 10,
+            "button_font_size": 16,
+            "collapse_with_checkbox": false,
+            "collapse_checkbox_background_color": "#ffffff",
+            "collapse_checkbox_text_color": "#000000",
+            "collapse_checkbox_border_color": "#dddddd",
+            "collapse_checkbox_border_width": 1,
+            "collapse_checkbox_border_radius": 8,
+            "collapse_checkbox_padding": 12,
+            "collapse_checkbox_font_size": 14,
+            "collapse_checkbox_control_size": 18,
+            "enable_b2b_checkout": false,
+            "b2b_store_vat_details": true,
+            "b2b_prices_include_vat": false,
+            "b2b_vat_country": "auto",
+            "b2b_custom_vat_rate": 0,
+            "b2b_free_shipping_threshold": 0,
+            "b2b_free_shipping_title": "Free Shipping",
+            "checkout_button_selector": "[name=\"checkout\"]",
+            "b2b_button_text": "B2B Checkout (VAT Exempt)",
+            "b2b_button_background_color": "#000000",
+            "b2b_button_text_color": "#ffffff",
+            "b2b_button_border_color": "#28a745",
+            "b2b_button_border_width": 2,
+            "b2b_button_border_radius": 4,
+            "b2b_button_padding_vertical": 12,
+            "b2b_button_padding_horizontal": 24
+          }
+        }
+      },
+      "block_order": [
+        "eu_tax_exemption_easy_tax_widget_bHCmn3"
+      ],
+      "settings": {
+        "include_margins": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "recently_viewed_products_w4PGc3": {
+      "type": "recently-viewed-products",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "Recently viewed products",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h2",
+        "description": "",
+        "limit": 8,
+        "columns": 4,
+        "column_gap": "medium",
+        "row_gap": "inherit",
+        "enable_slider": true,
+        "navigation_position": "bottom",
+        "pcard_image_ratio": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 60,
+        "padding_bottom": 80,
+        "show_section_divider": true,
+        "divider_width": "full"
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs_96z8tE",
+    "main-cart",
+    "1774958402f3d4b4bb",
+    "recently_viewed_products_w4PGc3"
+  ]
+}

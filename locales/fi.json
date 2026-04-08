@@ -1,0 +1,126 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "customer": {
+    "account_action": "Kirjaudu sisään / Rekisteröidy",
+    "log_out": "Kirjaudu ulos"
+  },
+  "newsletter": {
+    "button_label": "Rekisteröidy"
+  },
+  "sections": {
+    "cart": {
+      "title": "Ostoskori",
+      "empty": "Ostoskorisi on tällä hetkellä tyhjä",
+      "estimated_total": "Arvioitu yhteissumma",
+      "checkout": "Siirry kassalle",
+      "taxes_and_shipping_policy_at_checkout_html": "Verot ja <a href=\"{{ link }}\" class=\"btn--link text-sm-extra\">toimituskulut</a> lasketaan kassalla",
+      "taxes_included_but_shipping_at_checkout": "Verot sisältyvät hintaan ja toimituskulut lasketaan kassalla",
+      "taxes_included_and_shipping_policy_html": "Verot sisältyvät hintaan. <a href=\"{{ link }}\" class=\"btn--link text-sm-extra\">Toimituskulut</a> ja alennukset lasketaan kassalla.",
+      "update": "Päivitä",
+      "cart_error": "Tapahtui virhe ostoskorin päivityksessä. Yritä uudelleen.",
+      "cart_quantity_error_html": "Voit lisätä ostoskoriisi vain {{ quantity }} kappaletta tästä tuotteesta."
+    }
+  },
+  "general": {
+    "search": {
+      "search": "Haku",
+      "all_products": "Kaikki kategoriat",
+      "search_type": "Hakutyyppi",
+      "placeholder": "Mitä etsit?"
+    },
+    "cart": {
+      "title": "Ostoskori",
+      "view_empty_cart": "Näytä ostoskori",
+      "remove": "Poista",
+      "continue_shopping": "Jatka ostoksia",
+      "note": {
+        "title": "Tilausmerkintä / Viitenumero",
+        "caption": "Erityisohjeet tilaukselle",
+        "button": "Käytä"
+      },
+      "coupon": {
+        "title": "Kuponki",
+        "remove": "Poista {{ code }}",
+        "caption": "Syötä alennuskoodi tähän",
+        "button": "Käytä",
+        "duplicate_error_message": "Alennuskoodi on jo käytetty ostoskorissasi.",
+        "apply_error_message": "Alennuskoodia ei voi käyttää ostoskorissasi."
+      }
+    }
+  },
+  "customer_accounts": {
+    "order_details": {
+      "payment": {
+        "payment_type": {
+          "cash_on_delivery": "Lasku 30 päivää"
+        },
+        "manual_payment_methods": {
+          "cash_on_delivery": "Lasku 30 päivää - {{formattedTransactionAmount}}"
+        }
+      }
+    }
+  },
+  "shopify": {
+    "notices": {
+      "order": {
+        "cash_on_delivery": "Lasku 30 päivää"
+      }
+    },
+    "checkout": {
+      "payment_gateway": {
+        "cash_on_delivery_label": "Lasku 30 päivää (vain yrityksille)"
+      }
+    }
+  },
+  "products": {
+    "product": {
+      "description": "Kuvaus",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Toimituskulut</a> lasketaan kassalla.",
+      "inventory_low_stock_one_item_html": "Toimi nopeasti, varastossa on enää <strong>{{ quantity }}</strong> tuotetta jäljellä.",
+      "inventory_low_stock_many_items_html": "Toimi nopeasti, varastossa on enää <strong>{{ quantity }}</strong> tuotetta jäljellä.",
+      "add_to_cart": "Lisää ostoskoriin",
+      "add_to_cart_short": "Lisätä",
+      "add_all_to_cart": "Lisää kaikki ostoskoriin",
+      "buy_it_now": "Osta se nyt",
+      "choose_options": "Valitse vaihtoehdot",
+      "choose_options_short": "Näytä",
+      "quick_view": "Pikanäkymä",
+      "quick_view_title": "Valitse vaihtoehtosi",
+      "shop": "Kauppa",
+      "view_product_list": "Katso tuoteluettelo",
+      "inventory_in_stock": "Saatavilla varastossa",
+      "inventory_in_stock_show_count_html": "Saatavilla varastossa <strong>({{ quantity }})</strong>",
+      "inventory_low_stock": "Alhainen varasto",
+      "inventory_out_of_stock": "Loppunut varastosta",
+      "inventory_out_of_stock_continue_selling": "Varastossa",
+      "on_sale": "Myynti",
+      "product_variants": "Tuotevariaatiot",
+      "open_size_chart": "Kokotaulukko"
+    }
+  },
+  "templates": {
+    "cart": {
+      "cart": "Ostoskori"
+    },
+    "contact": {
+      "form": {
+        "title": "Yhteydenottolomake",
+        "name": "Nimi",
+        "email": "Sähköposti",
+        "phone": "Puhelinnumero",
+        "comment": "Viestisi",
+        "send": "Lähetä nyt",
+        "post_success": "Kiitos yhteydenotostasi. Otamme sinuun yhteyttä mahdollisimman pian.",
+        "error_heading": "Säädä seuraavia:"
+      }
+    }
+  }
+}

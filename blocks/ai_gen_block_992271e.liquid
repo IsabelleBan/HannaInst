@@ -1,0 +1,890 @@
+{% doc %}
+  @prompt
+    hero section divided in 60-40, make it 2 sections with a background, make the right section divided in 2 horozontoly, make it posssibel to change the width of the 2 big sections 70-30, add backgroudn images and videos, control whre the text is top meddle och bottom, overlay opacity dont work
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% assign left_width = block.settings.left_section_width %}
+{% assign right_width = 100 | minus: left_width %}
+
+{% style %}
+  .ai-hero-dual-section-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+  }
+
+  .ai-hero-dual-container-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: {{ left_width }}fr {{ right_width }}fr;
+    width: 100%;
+  }
+
+  .ai-hero-dual-section-left-{{ ai_gen_id }},
+  .ai-hero-dual-section-right-top-{{ ai_gen_id }},
+  .ai-hero-dual-section-right-bottom-{{ ai_gen_id }} {
+    position: relative;
+    padding: {{ block.settings.section_padding }}px;
+    display: flex;
+    overflow: hidden;
+    min-height: 400px;
+  }
+
+  .ai-hero-dual-section-left-{{ ai_gen_id }} {
+    align-items: {{ block.settings.left_vertical_alignment }};
+    background-color: {{ block.settings.left_bg_color }};
+  }
+
+  .ai-hero-dual-section-right-top-{{ ai_gen_id }} {
+    align-items: {{ block.settings.right_top_vertical_alignment }};
+    background-color: {{ block.settings.right_top_bg_color }};
+  }
+
+  .ai-hero-dual-section-right-bottom-{{ ai_gen_id }} {
+    align-items: {{ block.settings.right_bottom_vertical_alignment }};
+    background-color: {{ block.settings.right_bottom_bg_color }};
+  }
+
+  .ai-hero-dual-bg-media-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .ai-hero-dual-bg-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .ai-hero-dual-section-left-{{ ai_gen_id }} .ai-hero-dual-bg-overlay-{{ ai_gen_id }} {
+    background-color: {{ block.settings.left_bg_color }};
+    opacity: {{ block.settings.left_overlay_opacity | divided_by: 100.0 }};
+  }
+
+  .ai-hero-dual-section-right-top-{{ ai_gen_id }} .ai-hero-dual-bg-overlay-{{ ai_gen_id }} {
+    background-color: {{ block.settings.right_top_bg_color }};
+    opacity: {{ block.settings.right_top_overlay_opacity | divided_by: 100.0 }};
+  }
+
+  .ai-hero-dual-section-right-bottom-{{ ai_gen_id }} .ai-hero-dual-bg-overlay-{{ ai_gen_id }} {
+    background-color: {{ block.settings.right_bottom_bg_color }};
+    opacity: {{ block.settings.right_bottom_overlay_opacity | divided_by: 100.0 }};
+  }
+
+  .ai-hero-dual-section-right-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .ai-hero-dual-content-{{ ai_gen_id }} {
+    position: relative;
+    z-index: 2;
+    max-width: {{ block.settings.content_max_width }}px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: {{ block.settings.content_gap }}px;
+  }
+
+  .ai-hero-dual-heading-{{ ai_gen_id }} {
+    margin: 0;
+    font-size: {{ block.settings.heading_size }}px;
+    line-height: 1.2;
+  }
+
+  .ai-hero-dual-heading-left-{{ ai_gen_id }} {
+    color: {{ block.settings.left_heading_color }};
+  }
+
+  .ai-hero-dual-heading-right-top-{{ ai_gen_id }} {
+    color: {{ block.settings.right_top_heading_color }};
+  }
+
+  .ai-hero-dual-heading-right-bottom-{{ ai_gen_id }} {
+    color: {{ block.settings.right_bottom_heading_color }};
+  }
+
+  .ai-hero-dual-text-{{ ai_gen_id }} {
+    margin: 0;
+    font-size: {{ block.settings.text_size }}px;
+    line-height: 1.6;
+  }
+
+  .ai-hero-dual-text-left-{{ ai_gen_id }} {
+    color: {{ block.settings.left_text_color }};
+  }
+
+  .ai-hero-dual-text-right-top-{{ ai_gen_id }} {
+    color: {{ block.settings.right_top_text_color }};
+  }
+
+  .ai-hero-dual-text-right-bottom-{{ ai_gen_id }} {
+    color: {{ block.settings.right_bottom_text_color }};
+  }
+
+  .ai-hero-dual-button-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    align-self: flex-start;
+  }
+
+  .ai-hero-dual-button-left-{{ ai_gen_id }} {
+    background-color: {{ block.settings.left_button_bg }};
+    color: {{ block.settings.left_button_color }};
+    border-color: {{ block.settings.left_button_bg }};
+  }
+
+  .ai-hero-dual-button-left-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.left_button_hover_bg }};
+    border-color: {{ block.settings.left_button_hover_bg }};
+  }
+
+  .ai-hero-dual-button-right-top-{{ ai_gen_id }} {
+    background-color: {{ block.settings.right_top_button_bg }};
+    color: {{ block.settings.right_top_button_color }};
+    border-color: {{ block.settings.right_top_button_bg }};
+  }
+
+  .ai-hero-dual-button-right-top-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.right_top_button_hover_bg }};
+    border-color: {{ block.settings.right_top_button_hover_bg }};
+  }
+
+  .ai-hero-dual-button-right-bottom-{{ ai_gen_id }} {
+    background-color: {{ block.settings.right_bottom_button_bg }};
+    color: {{ block.settings.right_bottom_button_color }};
+    border-color: {{ block.settings.right_bottom_button_bg }};
+  }
+
+  .ai-hero-dual-button-right-bottom-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.right_bottom_button_hover_bg }};
+    border-color: {{ block.settings.right_bottom_button_hover_bg }};
+  }
+
+  .ai-hero-dual-image-wrapper-{{ ai_gen_id }} {
+    width: 100%;
+    margin-top: {{ block.settings.image_spacing }}px;
+  }
+
+  .ai-hero-dual-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    display: block;
+  }
+
+  .ai-hero-dual-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    min-height: 200px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: {{ block.settings.image_border_radius }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-hero-dual-image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 250px;
+    max-height: 250px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .ai-hero-dual-container-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-hero-dual-section-right-{{ ai_gen_id }} {
+      grid-template-rows: auto auto;
+    }
+
+    .ai-hero-dual-section-left-{{ ai_gen_id }},
+    .ai-hero-dual-section-right-top-{{ ai_gen_id }},
+    .ai-hero-dual-section-right-bottom-{{ ai_gen_id }} {
+      min-height: 300px;
+    }
+
+    .ai-hero-dual-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.7 }}px;
+    }
+
+    .ai-hero-dual-text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.text_size | times: 0.9 }}px;
+    }
+
+    .ai-hero-dual-button-{{ ai_gen_id }} {
+      width: 100%;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-hero-dual-section-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-hero-dual-container-{{ ai_gen_id }}">
+    <div class="ai-hero-dual-section-left-{{ ai_gen_id }}">
+      {% if block.settings.left_bg_video != blank %}
+        <video
+          class="ai-hero-dual-bg-media-{{ ai_gen_id }}"
+          autoplay
+          loop
+          muted
+          playsinline
+        >
+          <source src="{{ block.settings.left_bg_video }}" type="video/mp4">
+        </video>
+        <div class="ai-hero-dual-bg-overlay-{{ ai_gen_id }}"></div>
+      {% elsif block.settings.left_bg_image %}
+        <img
+          src="{{ block.settings.left_bg_image | image_url: width: 2000 }}"
+          alt="{{ block.settings.left_bg_image.alt | escape }}"
+          loading="lazy"
+          class="ai-hero-dual-bg-media-{{ ai_gen_id }}"
+        >
+        <div class="ai-hero-dual-bg-overlay-{{ ai_gen_id }}"></div>
+      {% endif %}
+
+      <div class="ai-hero-dual-content-{{ ai_gen_id }}">
+        {% if block.settings.left_heading != blank %}
+          <h2 class="ai-hero-dual-heading-{{ ai_gen_id }} ai-hero-dual-heading-left-{{ ai_gen_id }}">
+            {{ block.settings.left_heading }}
+          </h2>
+        {% endif %}
+
+        {% if block.settings.left_text != blank %}
+          <div class="ai-hero-dual-text-{{ ai_gen_id }} ai-hero-dual-text-left-{{ ai_gen_id }}">
+            {{ block.settings.left_text }}
+          </div>
+        {% endif %}
+
+        {% if block.settings.left_button_label != blank %}
+          <a
+            href="{{ block.settings.left_button_link }}"
+            class="ai-hero-dual-button-{{ ai_gen_id }} ai-hero-dual-button-left-{{ ai_gen_id }}"
+          >
+            {{ block.settings.left_button_label }}
+          </a>
+        {% endif %}
+
+        {% if block.settings.left_show_image %}
+          <div class="ai-hero-dual-image-wrapper-{{ ai_gen_id }}">
+            {% if block.settings.left_image %}
+              <img
+                src="{{ block.settings.left_image | image_url: width: 800 }}"
+                alt="{{ block.settings.left_image.alt | escape }}"
+                loading="lazy"
+                width="{{ block.settings.left_image.width }}"
+                height="{{ block.settings.left_image.height }}"
+                class="ai-hero-dual-image-{{ ai_gen_id }}"
+              >
+            {% else %}
+              <div class="ai-hero-dual-image-placeholder-{{ ai_gen_id }}">
+                {{ 'image' | placeholder_svg_tag }}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="ai-hero-dual-section-right-{{ ai_gen_id }}">
+      <div class="ai-hero-dual-section-right-top-{{ ai_gen_id }}">
+        {% if block.settings.right_top_bg_video != blank %}
+          <video
+            class="ai-hero-dual-bg-media-{{ ai_gen_id }}"
+            autoplay
+            loop
+            muted
+            playsinline
+          >
+            <source src="{{ block.settings.right_top_bg_video }}" type="video/mp4">
+          </video>
+          <div class="ai-hero-dual-bg-overlay-{{ ai_gen_id }}"></div>
+        {% elsif block.settings.right_top_bg_image %}
+          <img
+            src="{{ block.settings.right_top_bg_image | image_url: width: 2000 }}"
+            alt="{{ block.settings.right_top_bg_image.alt | escape }}"
+            loading="lazy"
+            class="ai-hero-dual-bg-media-{{ ai_gen_id }}"
+          >
+          <div class="ai-hero-dual-bg-overlay-{{ ai_gen_id }}"></div>
+        {% endif %}
+
+        <div class="ai-hero-dual-content-{{ ai_gen_id }}">
+          {% if block.settings.right_top_heading != blank %}
+            <h2 class="ai-hero-dual-heading-{{ ai_gen_id }} ai-hero-dual-heading-right-top-{{ ai_gen_id }}">
+              {{ block.settings.right_top_heading }}
+            </h2>
+          {% endif %}
+
+          {% if block.settings.right_top_text != blank %}
+            <div class="ai-hero-dual-text-{{ ai_gen_id }} ai-hero-dual-text-right-top-{{ ai_gen_id }}">
+              {{ block.settings.right_top_text }}
+            </div>
+          {% endif %}
+
+          {% if block.settings.right_top_button_label != blank %}
+            <a
+              href="{{ block.settings.right_top_button_link }}"
+              class="ai-hero-dual-button-{{ ai_gen_id }} ai-hero-dual-button-right-top-{{ ai_gen_id }}"
+            >
+              {{ block.settings.right_top_button_label }}
+            </a>
+          {% endif %}
+
+          {% if block.settings.right_top_show_image %}
+            <div class="ai-hero-dual-image-wrapper-{{ ai_gen_id }}">
+              {% if block.settings.right_top_image %}
+                <img
+                  src="{{ block.settings.right_top_image | image_url: width: 800 }}"
+                  alt="{{ block.settings.right_top_image.alt | escape }}"
+                  loading="lazy"
+                  width="{{ block.settings.right_top_image.width }}"
+                  height="{{ block.settings.right_top_image.height }}"
+                  class="ai-hero-dual-image-{{ ai_gen_id }}"
+                >
+              {% else %}
+                <div class="ai-hero-dual-image-placeholder-{{ ai_gen_id }}">
+                  {{ 'image' | placeholder_svg_tag }}
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="ai-hero-dual-section-right-bottom-{{ ai_gen_id }}">
+        {% if block.settings.right_bottom_bg_video != blank %}
+          <video
+            class="ai-hero-dual-bg-media-{{ ai_gen_id }}"
+            autoplay
+            loop
+            muted
+            playsinline
+          >
+            <source src="{{ block.settings.right_bottom_bg_video }}" type="video/mp4">
+          </video>
+          <div class="ai-hero-dual-bg-overlay-{{ ai_gen_id }}"></div>
+        {% elsif block.settings.right_bottom_bg_image %}
+          <img
+            src="{{ block.settings.right_bottom_bg_image | image_url: width: 2000 }}"
+            alt="{{ block.settings.right_bottom_bg_image.alt | escape }}"
+            loading="lazy"
+            class="ai-hero-dual-bg-media-{{ ai_gen_id }}"
+          >
+          <div class="ai-hero-dual-bg-overlay-{{ ai_gen_id }}"></div>
+        {% endif %}
+
+        <div class="ai-hero-dual-content-{{ ai_gen_id }}">
+          {% if block.settings.right_bottom_heading != blank %}
+            <h2 class="ai-hero-dual-heading-{{ ai_gen_id }} ai-hero-dual-heading-right-bottom-{{ ai_gen_id }}">
+              {{ block.settings.right_bottom_heading }}
+            </h2>
+          {% endif %}
+
+          {% if block.settings.right_bottom_text != blank %}
+            <div class="ai-hero-dual-text-{{ ai_gen_id }} ai-hero-dual-text-right-bottom-{{ ai_gen_id }}">
+              {{ block.settings.right_bottom_text }}
+            </div>
+          {% endif %}
+
+          {% if block.settings.right_bottom_button_label != blank %}
+            <a
+              href="{{ block.settings.right_bottom_button_link }}"
+              class="ai-hero-dual-button-{{ ai_gen_id }} ai-hero-dual-button-right-bottom-{{ ai_gen_id }}"
+            >
+              {{ block.settings.right_bottom_button_label }}
+            </a>
+          {% endif %}
+
+          {% if block.settings.right_bottom_show_image %}
+            <div class="ai-hero-dual-image-wrapper-{{ ai_gen_id }}">
+              {% if block.settings.right_bottom_image %}
+                <img
+                  src="{{ block.settings.right_bottom_image | image_url: width: 800 }}"
+                  alt="{{ block.settings.right_bottom_image.alt | escape }}"
+                  loading="lazy"
+                  width="{{ block.settings.right_bottom_image.width }}"
+                  height="{{ block.settings.right_bottom_image.height }}"
+                  class="ai-hero-dual-image-{{ ai_gen_id }}"
+                >
+              {% else %}
+                <div class="ai-hero-dual-image-placeholder-{{ ai_gen_id }}">
+                  {{ 'image' | placeholder_svg_tag }}
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Dual hero section",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "left_section_width",
+      "label": "Left section width",
+      "min": 30,
+      "max": 70,
+      "step": 5,
+      "unit": "%",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding",
+      "min": 20,
+      "max": 150,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "label": "Content max width",
+      "min": 400,
+      "max": 800,
+      "step": 20,
+      "unit": "px",
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "content_gap",
+      "label": "Content spacing",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 24,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Left section"
+    },
+    {
+      "type": "select",
+      "id": "left_vertical_alignment",
+      "label": "Vertical alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Middle"
+        },
+        {
+          "value": "flex-end",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_bg_image",
+      "label": "Background image"
+    },
+    {
+      "type": "url",
+      "id": "left_bg_video",
+      "label": "Background video URL"
+    },
+    {
+      "type": "color",
+      "id": "left_bg_color",
+      "label": "Background color",
+      "default": "#1d349a"
+    },
+    {
+      "type": "range",
+      "id": "left_overlay_opacity",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 30
+    },
+    {
+      "type": "inline_richtext",
+      "id": "left_heading",
+      "label": "Heading",
+      "default": "Premium Quality"
+    },
+    {
+      "type": "color",
+      "id": "left_heading_color",
+      "label": "Heading color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "richtext",
+      "id": "left_text",
+      "label": "Text",
+      "default": "<p>Discover our curated collection of premium products designed for excellence.</p>"
+    },
+    {
+      "type": "color",
+      "id": "left_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "left_button_label",
+      "label": "Button text",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "left_button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "color",
+      "id": "left_button_bg",
+      "label": "Button background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "left_button_color",
+      "label": "Button text color",
+      "default": "#1d349a"
+    },
+    {
+      "type": "color",
+      "id": "left_button_hover_bg",
+      "label": "Button hover background",
+      "default": "#f4f691"
+    },
+    {
+      "type": "checkbox",
+      "id": "left_show_image",
+      "label": "Show image",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Right top section"
+    },
+    {
+      "type": "select",
+      "id": "right_top_vertical_alignment",
+      "label": "Vertical alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Middle"
+        },
+        {
+          "value": "flex-end",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_top_bg_image",
+      "label": "Background image"
+    },
+    {
+      "type": "url",
+      "id": "right_top_bg_video",
+      "label": "Background video URL"
+    },
+    {
+      "type": "color",
+      "id": "right_top_bg_color",
+      "label": "Background color",
+      "default": "#f4f691"
+    },
+    {
+      "type": "range",
+      "id": "right_top_overlay_opacity",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 30
+    },
+    {
+      "type": "inline_richtext",
+      "id": "right_top_heading",
+      "label": "Heading",
+      "default": "Fast Delivery"
+    },
+    {
+      "type": "color",
+      "id": "right_top_heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "richtext",
+      "id": "right_top_text",
+      "label": "Text",
+      "default": "<p>Get your orders delivered quickly with our express shipping options.</p>"
+    },
+    {
+      "type": "color",
+      "id": "right_top_text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "right_top_button_label",
+      "label": "Button text",
+      "default": "Learn more"
+    },
+    {
+      "type": "url",
+      "id": "right_top_button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "color",
+      "id": "right_top_button_bg",
+      "label": "Button background",
+      "default": "#1d349a"
+    },
+    {
+      "type": "color",
+      "id": "right_top_button_color",
+      "label": "Button text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "right_top_button_hover_bg",
+      "label": "Button hover background",
+      "default": "#000000"
+    },
+    {
+      "type": "checkbox",
+      "id": "right_top_show_image",
+      "label": "Show image",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "right_top_image",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Right bottom section"
+    },
+    {
+      "type": "select",
+      "id": "right_bottom_vertical_alignment",
+      "label": "Vertical alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Middle"
+        },
+        {
+          "value": "flex-end",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_bottom_bg_image",
+      "label": "Background image"
+    },
+    {
+      "type": "url",
+      "id": "right_bottom_bg_video",
+      "label": "Background video URL"
+    },
+    {
+      "type": "color",
+      "id": "right_bottom_bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "right_bottom_overlay_opacity",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 30
+    },
+    {
+      "type": "inline_richtext",
+      "id": "right_bottom_heading",
+      "label": "Heading",
+      "default": "24/7 Support"
+    },
+    {
+      "type": "color",
+      "id": "right_bottom_heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "richtext",
+      "id": "right_bottom_text",
+      "label": "Text",
+      "default": "<p>Our dedicated team is here to help you anytime, anywhere.</p>"
+    },
+    {
+      "type": "color",
+      "id": "right_bottom_text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "right_bottom_button_label",
+      "label": "Button text",
+      "default": "Contact us"
+    },
+    {
+      "type": "url",
+      "id": "right_bottom_button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "color",
+      "id": "right_bottom_button_bg",
+      "label": "Button background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "right_bottom_button_color",
+      "label": "Button text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "right_bottom_button_hover_bg",
+      "label": "Button hover background",
+      "default": "#1d349a"
+    },
+    {
+      "type": "checkbox",
+      "id": "right_bottom_show_image",
+      "label": "Show image",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "right_bottom_image",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Button border radius",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "label": "Image border radius",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "image_spacing",
+      "label": "Image spacing",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dual hero section"
+    }
+  ]
+}
+{% endschema %}

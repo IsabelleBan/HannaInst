@@ -1,0 +1,430 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "custom_css": [],
+      "settings": {
+        "container": "fixed",
+        "text_alignment": "start",
+        "padding_top": 16,
+        "padding_bottom": 20
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "badges": {
+          "type": "badges",
+          "settings": {
+            "show_soldout_badge": true,
+            "show_sale_badge": true,
+            "sale_badge_type": "percentage"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h2"
+          }
+        },
+        "meta": {
+          "type": "meta",
+          "settings": {
+            "link_color": "#1d349a",
+            "show_vendor": false,
+            "show_product_type": false,
+            "show_sku": true,
+            "show_barcode": false
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "text_f9fPKJ": {
+          "type": "text",
+          "settings": {
+            "text": "Price excludes VAT.",
+            "text_style": "body"
+          }
+        },
+        "inventory": {
+          "type": "inventory",
+          "settings": {
+            "text_style": "body",
+            "inventory_threshold": 10,
+            "show_inventory_quantity": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "product_tags_QymakK": {
+          "type": "product-tags",
+          "settings": {
+            "bakgrundsfarg": "#f0f0f0",
+            "textfarg": "#000000",
+            "kantfarg": "#e5e5e5",
+            "border_radius": 20,
+            "fontstorlek": 13
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_type": "shopify_swatch",
+            "swatch_style": "square",
+            "swatch_size": 32,
+            "button_style": "normal",
+            "size_title": "Size",
+            "size_chart_from_page": ""
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "pickup_availability": {
+          "type": "pickup_availability",
+          "settings": {}
+        },
+        "promotion_alert_L7ipQp": {
+          "type": "promotion_alert",
+          "disabled": true,
+          "settings": {
+            "text_color": "#049b6e",
+            "icon": "lightning",
+            "heading": "Limited time offer",
+            "description": "<p>Get $20 off when you spend $1,000 or more! <a href=\"/collections/all\" title=\"All products\">Learn more</a></p>"
+          }
+        },
+        "complementary": {
+          "type": "complementary",
+          "settings": {
+            "block_heading": "Perfect Match With",
+            "heading_size": "h4",
+            "show_below_product_media": false,
+            "make_collapsible_row": false,
+            "icon": "tag",
+            "product_list_limit": 6,
+            "layout": "grid",
+            "columns": 3,
+            "image_ratio": "1/1",
+            "enable_quick_add": true
+          }
+        },
+        "custom_liquid_qkjUUT": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<details class=\"accordion-details\">\n  <summary class=\"accordion-details__summary flex items-center justify-between\">\n    <div class=\"flex items-center gap-2\">\n      {% if localization.language.iso_code == 'sv' %}\n        <h2 class=\"h4 inline-richtext\">Beskrivning</h2>\n      {% elsif localization.language.iso_code == 'da' %}\n        <h2 class=\"h4 inline-richtext\">Beskrivelse</h2>\n      {% elsif localization.language.iso_code == 'no' %}\n        <h2 class=\"h4 inline-richtext\">Beskrivelse</h2>\n      {% elsif localization.language.iso_code == 'fi' %}\n        <h2 class=\"h4 inline-richtext\">Kuvaus</h2>\n      {% else %}\n        <h2 class=\"h4 inline-richtext\">Description</h2>\n      {% endif %}\n    </div>\n    <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-plus-toggle icon--medium icon--thick\" viewBox=\"0 0 20 20\" fill=\"none\">\n      <path class=\"horizontal\" d=\"M3.125 10H16.875\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n      <path class=\"vertical\" d=\"M10 3.125V16.875\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n    </svg>\n  </summary>\n  <div class=\"product-description-accordion__content rte\">\n    {{ product.metafields.custom.produktbeskrivning.value }}\n  </div>\n</details>\n\n<style>\n.product-description-accordion__content h1,\n.product-description-accordion__content h2,\n.product-description-accordion__content h3 {\n    color: inherit !important;\n    text-align: left !important;\n}\n.product-description-accordion__content ul,\n.product-description-accordion__content ol,\n.product-description-accordion__content li {\n    text-align: left !important;\n}\n.product-description-accordion__content * {\n    font-family: inherit !important;\n    font-size: inherit !important;\n    color: #1a1a1a !important;\n    background-color: transparent !important;\n}\n.product-description-accordion__content h1 { font-size: 1.4em !important; }\n.product-description-accordion__content h2 { font-size: 1.2em !important; }\n.product-description-accordion__content h3 { font-size: 1.1em !important; }\n.product-description-accordion__content iframe {\n    width: 100% !important;\n    max-width: 100% !important;\n    height: auto !important;\n    aspect-ratio: 16/9;\n}\n.product-description-accordion__content p {\n    text-align: left !important;\n    width: auto !important;\n    height: auto !important;\n    padding-bottom: 0 !important;\n    margin-bottom: 1em !important;\n}\n</style>"
+          }
+        },
+        "custom_liquid_KYHNVm": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<details class=\"accordion-details\">\n  <summary class=\"accordion-details__summary flex items-center justify-between\">\n    <div class=\"flex items-center gap-2\">\n      {% if localization.language.iso_code == 'sv' %}\n        <h2 class=\"h4 inline-richtext\">Specifikationer</h2>\n      {% elsif localization.language.iso_code == 'da' %}\n        <h2 class=\"h4 inline-richtext\">Specifikationer</h2>\n      {% elsif localization.language.iso_code == 'no' %}\n        <h2 class=\"h4 inline-richtext\">Spesifikasjoner</h2>\n      {% elsif localization.language.iso_code == 'fi' %}\n        <h2 class=\"h4 inline-richtext\">Tekniset tiedot</h2>\n      {% else %}\n        <h2 class=\"h4 inline-richtext\">Specifications</h2>\n      {% endif %}\n    </div>\n    <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-plus-toggle icon--medium icon--thick\" viewBox=\"0 0 20 20\" fill=\"none\">\n      <path class=\"horizontal\" d=\"M3.125 10H16.875\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n      <path class=\"vertical\" d=\"M10 3.125V16.875\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n    </svg>\n  </summary>\n  <div class=\"accordion-details__content rte\">\n    {% if product.metafields.custom.specif %}\n      {{ product.metafields.custom.specif.value }}\n    {% else %}\n      <p>No specifications available.</p>\n    {% endif %}\n  </div>\n</details>"
+          }
+        },
+        "collapsible_tab_BFbLtd": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Safety Data Sheet",
+            "heading_size": "h4",
+            "icon": "none",
+            "content": "{{ metaobjects.safety_data_sheet[\"safety-data-sheet-1xrtm9dj\"].sakerhet | metafield_tag }}",
+            "page": "",
+            "default_open": false,
+            "show_below_product_media": false
+          }
+        },
+        "custom_liquid_HQpwEh": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% if product.metafields.custom.product_data_sheet != blank %}\n<details class=\"accordion-details\">\n  <summary class=\"accordion-details__summary flex items-center justify-between\">\n    <div class=\"flex items-center gap-2\">\n      <h2 class=\"h4 inline-richtext\">SDS</h2>\n    </div>\n    <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-plus-toggle icon--medium icon--thick\" viewBox=\"0 0 20 20\" fill=\"none\">\n      <path class=\"horizontal\" d=\"M3.125 10H16.875\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n      <path class=\"vertical\" d=\"M10 3.125V16.875\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n    </svg>\n  </summary>\n  <div class=\"product-description-accordion__content rte\">\n    \n    {% for file in product.metafields.custom.product_data_sheet.value %}\n      {% assign file_url = file.url %}\n      {% assign clean_name = file_url | split: '?' | first | downcase %}\n      \n      <div style=\"padding: 12px 0; border-bottom: 1px solid rgba(var(--color-foreground),.05);\">\n        <a href=\"{{ file_url }}\" target=\"_blank\" style=\"display: inline-flex; align-items: center; text-decoration: underline; font-weight: bold; color: #1a1a1a; gap: 6px;\">\n          <span>\n            SDS\n            \n            {% comment %} Nu letar vi efter både DA och DK för danska filer {% endcomment %}\n            {% if clean_name contains '_se' or clean_name contains '-se' or clean_name contains ' se ' %} (Sv)\n            {% elsif clean_name contains '_en' or clean_name contains '-en' or clean_name contains 'en_' %} (En)\n            {% elsif clean_name contains '_fi' or clean_name contains '-fi' %} (Fi)\n            {% elsif clean_name contains '_da' or clean_name contains '-da' or clean_name contains '_dk' or clean_name contains '-dk' %} (Da)\n            {% elsif clean_name contains '_no' or clean_name contains '-no' %} (No)\n            {% endif %}\n          </span>\n          \n          <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"margin-left: 4px; opacity: 0.7;\"><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"></path><polyline points=\"15 3 21 3 21 9\"></polyline><line x1=\"10\" y1=\"14\" x2=\"21\" y2=\"3\"></line></svg>\n        </a>\n      </div>\n    {% endfor %}\n    \n  </div>\n</details>\n\n<style>\n.product-description-accordion__content div:last-child {\n    border-bottom: none !important;\n}\n</style>\n{% endif %}"
+          }
+        },
+        "collapsible-row-3": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Manuals",
+            "heading_size": "h4",
+            "icon": "none",
+            "content": "<p>{{ metaobjects.manual[\"manual-b52t1lnt\"].manualer | metafield_tag }}</p><p></p>",
+            "page": "",
+            "default_open": false,
+            "show_below_product_media": false
+          }
+        },
+        "payment_info": {
+          "type": "payment_info",
+          "settings": {
+            "color_scheme": "scheme-10",
+            "heading": "Payment & Security",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h5",
+            "description": "<p>Your payment information is processed securely. We do not store credit card details nor have access to your credit card information.</p>",
+            "show_payment_icons": true,
+            "show_below_product_media": true
+          }
+        },
+        "divider_pPz3Kw": {
+          "type": "divider",
+          "settings": {
+            "show_below_product_media": true
+          }
+        },
+        "social_sharing": {
+          "type": "social_sharing",
+          "disabled": true,
+          "settings": {}
+        },
+        "sticky_atc_bar_7HgNgP": {
+          "type": "sticky-atc-bar",
+          "settings": {
+            "visibility": "all",
+            "style": "minimalist",
+            "container": "full",
+            "show_atc_button": true,
+            "show_dynamic_checkout_buttons": false,
+            "show_quantity": true
+          }
+        }
+      },
+      "block_order": [
+        "badges",
+        "title",
+        "meta",
+        "price",
+        "text_f9fPKJ",
+        "inventory",
+        "description",
+        "product_tags_QymakK",
+        "variant_picker",
+        "buy_buttons",
+        "pickup_availability",
+        "promotion_alert_L7ipQp",
+        "complementary",
+        "custom_liquid_qkjUUT",
+        "custom_liquid_KYHNVm",
+        "collapsible_tab_BFbLtd",
+        "custom_liquid_HQpwEh",
+        "collapsible-row-3",
+        "payment_info",
+        "divider_pPz3Kw",
+        "social_sharing",
+        "sticky_atc_bar_7HgNgP"
+      ],
+      "custom_css": [
+        "@media (min-width: 1280px) {.product {padding-inline: 5rem; }}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "use_color_scheme_in_container": false,
+        "enable_sticky_info": true,
+        "media_size": "small",
+        "gallery_layout": "carousel",
+        "mobile_thumbnails": "show",
+        "show_image_border": false,
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    },
+    "17702808429c654715": {
+      "type": "apps",
+      "blocks": {
+        "wb_frequently_bought_together_frequently_buy_Gpth3D": {
+          "type": "shopify://apps/wb-frequently-bought-together/blocks/frequently-buy/5f9bd783-09d5-43d2-bb37-85281ca56a6b",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "wb_frequently_bought_together_frequently_buy_Gpth3D"
+      ],
+      "settings": {
+        "include_margins": true,
+        "padding_top": 10,
+        "padding_bottom": 10
+      }
+    },
+    "testimonials_8JHr3L": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_dhi3Xf": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "none",
+            "heading": "Testimonials",
+            "text": "<p>“I am extremely happy about both design and comfort. I am a furniture designer myself, and your product makes me happy.”</p>",
+            "author": "Stephanie L.",
+            "bio": "Verified Buyer",
+            "product": ""
+          }
+        },
+        "testimonial_D7Mq7i": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "none",
+            "heading": "Testimonials",
+            "text": "<p>The story behind, sustainable production, and the risk-free feeling with the free return policy make this a great choice.</p>",
+            "author": "Rachel M.",
+            "bio": "Verified Buyer",
+            "product": ""
+          }
+        },
+        "testimonial_33tAjm": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "none",
+            "heading": "Testimonials",
+            "text": "<p>“High-quality furniture, crafted with passion and care, fantastic in appearance and use, reasonably priced, and excellent custome.”</p>",
+            "author": "Emily J.",
+            "bio": "Verified Buyer",
+            "product": ""
+          }
+        },
+        "testimonial_dDRMwy": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "none",
+            "heading": "Testimonials",
+            "text": "<p>The craftsmanship, eco-friendly materials, and excellent customer service truly make this product an outstanding standout.</p>",
+            "author": "Sarah T.",
+            "bio": "Verified Buyer",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_dhi3Xf",
+        "testimonial_D7Mq7i",
+        "testimonial_33tAjm",
+        "testimonial_dDRMwy"
+      ],
+      "disabled": true,
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-3",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "Clients Love Us",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h2",
+        "description": "",
+        "text_size": "text-base",
+        "layout": "standard",
+        "card_color_scheme": "",
+        "card_content_color_scheme": "",
+        "card_image_ratio": "adapt",
+        "card_heading_size": "h4",
+        "card_text_size": "text-base",
+        "author_info_layout": "vertical",
+        "card_trigger_behavior": "click",
+        "show_image": true,
+        "show_author_image": true,
+        "columns_desktop": 3,
+        "column_gap": "2xs",
+        "row_gap": "inherit",
+        "enable_slider": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "show_progress_bar": true,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "quick_order_list_FDEqTY": {
+      "type": "quick-order-list",
+      "name": "t:sections.quick-order-list.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-10",
+        "show_image": true,
+        "show_sku": true,
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "Accessories",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "",
+        "text_size": "text-base",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--underline",
+        "button_icon": "none",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-1",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "You May Also Like",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h2",
+        "description": "",
+        "limit": 6,
+        "columns": 5,
+        "column_gap": "medium",
+        "row_gap": "inherit",
+        "enable_slider": true,
+        "navigation_position": "bottom",
+        "pcard_image_ratio": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "show_progress_bar": true,
+        "padding_top": 60,
+        "padding_bottom": 0,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main",
+    "17702808429c654715",
+    "testimonials_8JHr3L",
+    "quick_order_list_FDEqTY",
+    "related-products"
+  ]
+}

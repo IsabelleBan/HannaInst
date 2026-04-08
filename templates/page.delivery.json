@@ -1,0 +1,101 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "container": "fixed",
+        "text_alignment": "left",
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_i4EfR6": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_DW96dY": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Delivery</strong>",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "#1d349a",
+            "heading_size": "h1"
+          }
+        },
+        "text_kBjVVR": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>Order before 12.00 and we send the same day!</strong></h3><h3><strong>(Applies to stock orders)</strong></h3><h3></h3><p><strong>Sweden: 79 SEK</strong></p><p><strong>Norway: 19 EUR</strong></p><p><strong>Denmark & Finland: 10 EUR</strong></p><p><strong>Iceland + Åland + Faroe Island + Greenland 49 EUR </strong></p><p><strong>Svalbard  99 EUR</strong></p>",
+            "text_size": "text-inherit",
+            "text_line_limit": "none",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "heading_DW96dY",
+        "text_kBjVVR"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "",
+        "use_color_scheme_in_container": false,
+        "content_spacing": "standard",
+        "content_alignment": "left",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "rich_text_Qm6VrV": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_rzJHNX": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "hd1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_rzJHNX"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "",
+        "use_color_scheme_in_container": false,
+        "content_spacing": "standard",
+        "content_alignment": "left",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_i4EfR6",
+    "rich_text_Qm6VrV"
+  ]
+}

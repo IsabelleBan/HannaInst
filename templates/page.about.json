@@ -1,0 +1,364 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs_DgnWDV": {
+      "type": "breadcrumbs",
+      "settings": {
+        "container": "fixed",
+        "text_alignment": "start",
+        "padding_top": 16,
+        "padding_bottom": 20
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "container": "fixed",
+        "text_alignment": "center",
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "image_with_text_overlay_3FrkpM": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_MEEHjQ": {
+          "type": "subheading",
+          "settings": {
+            "subheading": ""
+          }
+        },
+        "heading_W8mPfG": {
+          "type": "heading",
+          "settings": {
+            "heading": "ISO 9001 European Production Faciity",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "hd1"
+          }
+        },
+        "text_VE8m6N": {
+          "type": "text",
+          "settings": {
+            "text": "<p>World leader in pH and titration. We manufacture over 3000 different products in our European factory.</p>",
+            "text_size": "text-base"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_MEEHjQ",
+        "heading_W8mPfG",
+        "text_VE8m6N"
+      ],
+      "custom_css": [
+        ".rich-text {max-width: 100rem;}"
+      ],
+      "settings": {
+        "container": "full",
+        "image": "shopify://shop_images/infinite-crops.jpg",
+        "desktop_height": "medium",
+        "overlay_opacity": 30,
+        "enable_parallax": true,
+        "parallax_direction": "vertical",
+        "color_scheme": "scheme-2",
+        "content_position": "bottom-left",
+        "content_alignment": "left",
+        "mobile_height": "adapt",
+        "content_position_mobile": "middle-center-mobile",
+        "content_alignment_mobile": "left",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "enable_preload_image": true
+      }
+    },
+    "rich_text_kyFd96": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Y9MMVQ": {
+          "type": "heading",
+          "settings": {
+            "heading": "About Us",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h1"
+          }
+        },
+        "heading_dRUGR4": {
+          "type": "heading",
+          "settings": {
+            "heading": "We design, manufacture, supply and support all of our products",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h2"
+          }
+        },
+        "text_7h6LaE": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Hanna Instruments® is a privately held group that designs, manufactures and distributes scientific products used in the analysis of a multitude of industries including Laboratory, Food & Beverage, Hydroponics, Aquaculture, and Wastewater.</p><p>The company started in Italy in 1978, and is now located in Woonsocket, RI, USA.</p><p>Over the last four decades, Hanna has set up an impressive worldwide infrastructure that consists of 4 manufacturing facilities, 3 research & development centres and 47 dedicated sales and technical support offices in different countries. Hanna Instruments employs over 1,500 people worldwide.</p><p>Hanna Instruments provides people with an easy to use, common sense approach to their testing needs and we make sure our solution to your testing needs is delivered at an affordable price.</p><p>In today’s competitive market, Hanna has been growing every year with this philosophy and continuously invests into it. We invest in research and development to improve our knowledge and to expand our technologies, we invest in our manufacturing plants to continuously improve our quality and efficiencies, and we invest in new sales and technical support offices in order to be closer to our customers.</p>",
+            "text_size": "text-base",
+            "text_line_limit": "none",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        },
+        "heading_etNFc3": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our philosophy",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h2"
+          }
+        },
+        "text_ixJdTw": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our philosophy is to supply customers around the world with practical, cost-effective solutions for their testing needs with world-class service and support.</p><p>Hanna revolutionised the world of pH testing when it introduced the pHep® (pH Electronic Paper) pH tester in 1986. Millions of people were given the opportunity to test pH simply, accurately and affordably.</p><p>The same driving philosophy that has been a Hanna trademark for over for decades continues to this day.</p>",
+            "text_size": "text-base",
+            "text_line_limit": "none",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        },
+        "heading_iqg3B3": {
+          "type": "heading",
+          "settings": {
+            "heading": "Industries we serve",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h2"
+          }
+        },
+        "text_pREVqx": {
+          "type": "text",
+          "settings": {
+            "text": "<p><a href=\"/collections/agriculture\" title=\"Agriculture\">Agriculture</a>  •  <a href=\"/collections/water\" title=\"Water\">Aquaculture</a>   •  <a href=\"/collections/aquarium\" title=\"Aquarium\">Aquariums and Pets</a> •  <a href=\"/collections/meters\" title=\"Meters\">Boilers and Cooling Towers</a> • <a href=\"/collections/brewery-beer-wine\" title=\"Brewery, Beer & Wine\">Breweries</a> • <a href=\"/collections/spectrophotometers\" title=\"Spectrophotometers\">Environmental monitoring</a> • <a href=\"/collections/food-and-drink\" title=\"Food and Drink\">Food and Dairy</a> • <a href=\"/collections/greenhouses-hydroponics\" title=\"Greenhouses & Hydroponics\">Greenhouses & Hydroponics</a> • <a href=\"/collections/testers\" title=\"Testers\">Industrial Processes</a> • <a href=\"/collections/waste-water\" title=\"Waste water\">Industrial Wastewater</a> • <a href=\"/collections/water\" title=\"Water\">Municipal Drinking and Waste Water </a>• <a href=\"/collections/meters\" title=\"Meters\">Plating</a> • <a href=\"/collections/printing-and-graphics\" title=\"Printing and Graphics\">Printing/Graphics</a> •<a href=\"/collections/meters\" title=\"Meters\"> Quality Control Laboratories</a> • <a href=\"/collections/pools-spas-and-hot-tubs\" title=\"Pools, Spas and Hot Tubs\">Swimming Pools and Spas</a> • <a href=\"/collections/water\" title=\"Water\">Water Conditioning</a> • <a href=\"/collections/water\" title=\"Water\">Water Purification</a> • <a href=\"/collections/vineyards-and-wine\" title=\"Vineyards and Wine\">Wineries</a></p>",
+            "text_size": "text-base",
+            "text_line_limit": "none",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Y9MMVQ",
+        "heading_dRUGR4",
+        "text_7h6LaE",
+        "heading_etNFc3",
+        "text_ixJdTw",
+        "heading_iqg3B3",
+        "text_pREVqx"
+      ],
+      "custom_css": [
+        ".rich-text {max-width: 78rem; margin: 0 auto;}",
+        "@media (max-width: 1023px) {.rich-text__heading {max-width: 50rem; margin: 0 auto; }}"
+      ],
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "",
+        "use_color_scheme_in_container": false,
+        "content_spacing": "standard",
+        "content_alignment": "left",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "testimonials_mmwX8K": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_aFeqRe": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "heading": "Testimonials",
+            "text": "<p>I have just set up a business from home and need to check the temperature and pH of my products. I rang up Hanna Instruments and the lady I spoke to was extremely helpful. I am really impressed and what a lovely company to deal with.</p>",
+            "author": "Susan Thompkins",
+            "bio": "",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_aFeqRe"
+      ],
+      "name": "t:sections.testimonials.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-10",
+        "section_header_alignment": "center",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "Testimonials",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h2",
+        "description": "",
+        "text_size": "text-base",
+        "layout": "focused",
+        "card_color_scheme": "",
+        "card_content_color_scheme": "",
+        "card_image_ratio": "adapt",
+        "card_heading_size": "h4",
+        "card_text_size": "h3",
+        "author_info_layout": "vertical",
+        "card_trigger_behavior": "click",
+        "show_image": false,
+        "show_author_image": false,
+        "columns_desktop": 3,
+        "column_gap": "medium",
+        "row_gap": "medium",
+        "enable_slider": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "show_progress_bar": true,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "multicolumn_k3ctFH": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_rkPMqr": {
+          "type": "column",
+          "settings": {
+            "title": "Great Customer Service",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h4",
+            "text": "<p>We understand that with businesses operating around the clock, when you order one of our products, you want it instantly.</p><p>Order before 12 noon and we will ship the same day, fast delivery and large stock.</p>",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        },
+        "column_eKTANW": {
+          "type": "column",
+          "settings": {
+            "title": "Something for Everyone",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h4",
+            "text": "<p>Search and choose from over 3,500 products at hannainst.se.</p><p>Become a reseller and contact us for your copy of our top 100 sellers.</p>",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        },
+        "column_8RMg3C": {
+          "type": "column",
+          "settings": {
+            "title": "Thorough origin check and support after your purchase",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h4",
+            "text": "<p>All our products are researched and developed in the USA, manufactured in Europe and sold and serviced in the Nordics by HannaNorden AB.</p><p>Great service for all Hanna meters thanks to our team of engineers and our full service laboratory.</p><p>UKAS accredited temperature calibration laboratory for annual checks.</p>",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        },
+        "column_cyqBEz": {
+          "type": "column",
+          "settings": {
+            "title": "Where You'll See Us",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h4",
+            "text": "<p>Well-known for our technology and competitive pricing, you’ll find the Hanna brand used by manufacturing units, production lines, logistics, laboratories and professional kitchens.</p><p>You’ll see us in aquaculture, catering, healthcare, education, farming and food production. Our products are also used in the motor industry, energy companies, water utilities, and by organisations working in the developing world.</p>",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "column_rkPMqr",
+        "column_eKTANW",
+        "column_8RMg3C",
+        "column_cyqBEz"
+      ],
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-10",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "",
+        "text_size": "text-base",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--underline",
+        "button_icon": "none",
+        "content_alignment": "left",
+        "show_col_count": false,
+        "show_image": false,
+        "columns_desktop": 4,
+        "column_gap": "large",
+        "row_gap": "inherit",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "show_section_divider": false,
+        "divider_width": "fixed",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs_DgnWDV",
+    "main",
+    "image_with_text_overlay_3FrkpM",
+    "rich_text_kyFd96",
+    "testimonials_mmwX8K",
+    "multicolumn_k3ctFH"
+  ]
+}

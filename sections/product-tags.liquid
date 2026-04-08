@@ -1,0 +1,96 @@
+{% if product.tags.size > 0 %}
+  <div class="product-tags-wrapper" style="margin-top: {{ section.settings.margin_top }}px; margin-bottom: {{ section.settings.margin_bottom }}px;">
+    <div class="product-tags-list" style="display: flex; flex-wrap: wrap; gap: {{ section.settings.gap }}px;">
+      {% for tag in product.tags %}
+        <span class="product-tag" style="
+          display: inline-block;
+          padding: 6px 12px;
+          background-color: {{ section.settings.bakgrundsfarg }};
+          color: {{ section.settings.textfarg }};
+          border-radius: {{ section.settings.border_radius }}px;
+          font-size: {{ section.settings.fontstorlek }}px;
+          border: 1px solid {{ section.settings.kantfarg }};
+        ">{{ tag }}</span>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Produkt-taggar",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Avstånd"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Marginal uppe",
+      "min": 0, "max": 60, "step": 4,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Marginal nere",
+      "min": 0, "max": 60, "step": 4,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Mellanrum mellan taggar",
+      "min": 2, "max": 20, "step": 2,
+      "default": 8,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Utseende"
+    },
+    {
+      "type": "color",
+      "id": "bakgrundsfarg",
+      "label": "Bakgrundsfärg",
+      "default": "#f0f0f0"
+    },
+    {
+      "type": "color",
+      "id": "textfarg",
+      "label": "Textfärg",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "kantfarg",
+      "label": "Kantlinjefärg",
+      "default": "#e5e5e5"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Rundade hörn",
+      "min": 0, "max": 40, "step": 2,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "fontstorlek",
+      "label": "Teckenstorlek",
+      "min": 10, "max": 20, "step": 1,
+      "default": 13,
+      "unit": "px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Produkt-taggar"
+    }
+  ]
+}
+{% endschema %}

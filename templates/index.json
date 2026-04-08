@@ -1,0 +1,996 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "grid_banner_UneWba": {
+      "type": "grid-banner",
+      "blocks": {
+        "banner_card_T4Dafg": {
+          "type": "banner-card",
+          "settings": {
+            "color_scheme": "scheme-2",
+            "image": "shopify://shop_images/screenshot_11-682da5a841556.png",
+            "image_overlay_opacity": 30,
+            "column_span": 4,
+            "row_span": 2,
+            "content_spacing": "medium",
+            "content_gap": "standard",
+            "content_position": "middle-left",
+            "content_alignment": "left",
+            "content_position_mobile": "middle-center",
+            "content_alignment_mobile": "center",
+            "card_link": "shopify://pages/about",
+            "subheading": "Welcome to Hanna Instruments",
+            "subheading_style": "",
+            "heading": "We are Scandinavia's nr. 1 and world leader in electrochemistry for scientific instruments.",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h2",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "text": "",
+            "text_size": "text-base",
+            "button_label": "Read more about us",
+            "button_style": "btn--secondary",
+            "button_icon": "arrow-right",
+            "button_size": "btn--medium",
+            "block_custom_class": "",
+            "enable_preload_image": false
+          }
+        },
+        "banner_card_jKcaf9": {
+          "type": "banner-card",
+          "settings": {
+            "color_scheme": "scheme-2",
+            "image": "shopify://shop_images/screenshot_2-69369d3a51fcc.jpg",
+            "image_overlay_opacity": 30,
+            "column_span": 2,
+            "row_span": 1,
+            "content_spacing": "medium",
+            "content_gap": "standard",
+            "content_position": "bottom-left",
+            "content_alignment": "left",
+            "content_position_mobile": "middle-center",
+            "content_alignment_mobile": "center",
+            "card_link": "shopify://pages/contact",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "Annual service and calibration",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h3",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "text": "",
+            "text_size": "text-base",
+            "button_label": "Book a calibration",
+            "button_style": "btn--primary",
+            "button_icon": "arrow-right",
+            "button_size": "btn--small",
+            "block_custom_class": "",
+            "enable_preload_image": false
+          }
+        },
+        "banner_card_LxeAyX": {
+          "type": "banner-card",
+          "settings": {
+            "color_scheme": "scheme-2",
+            "image": "shopify://shop_images/pexels-artempodrez-8988548.jpg",
+            "image_overlay_opacity": 30,
+            "column_span": 2,
+            "row_span": 1,
+            "content_spacing": "medium",
+            "content_gap": "standard",
+            "content_position": "bottom-left",
+            "content_alignment": "left",
+            "content_position_mobile": "middle-center",
+            "content_alignment_mobile": "center",
+            "card_link": "shopify://policies/shipping-policy",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "Delivery within 48 hours",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h3",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "text": "",
+            "text_size": "text-base",
+            "button_label": "Read more",
+            "button_style": "btn--primary",
+            "button_icon": "arrow-right",
+            "button_size": "btn--small",
+            "block_custom_class": "",
+            "enable_preload_image": false
+          }
+        }
+      },
+      "block_order": [
+        "banner_card_T4Dafg",
+        "banner_card_jKcaf9",
+        "banner_card_LxeAyX"
+      ],
+      "name": "t:sections.grid-banner.presets__2.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-1",
+        "section_header_alignment": "center",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h2",
+        "description": "",
+        "description_size": "text-base",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--primary",
+        "button_icon": "none",
+        "columns": 6,
+        "banner_height": "medium",
+        "gap": "2xs",
+        "enable_swiper_mobile": false,
+        "show_section_divider": false,
+        "divider_width": "fixed",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "multicolumn_HBAikL": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_nY9WnE": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/2574_a808c28f-bd6c-49a8-9b33-269021e9c539.png",
+            "title": "Which subject do you want to measure?",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h4",
+            "text": "<p>Measuring the correct parameter is the foundation for reliable results. Here you will find Hanna Instruments for water, food, environmental, and industrial applications. Select the parameter you want to analyze, and we will help you find the right instrument and accessories.</p>",
+            "text_size": "text-base",
+            "button_label": "Explore",
+            "button_link": "shopify://collections",
+            "button_style": "btn--primary",
+            "button_icon": "none"
+          }
+        },
+        "column_prHXTD": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/agriculturebox1.png",
+            "title": "Application",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h4",
+            "text": "<p>From portable field meters to laboratory analyzers and test kits, Hanna offers reliable tools for measuring parameters such as pH, conductivity, dissolved oxygen, nutrients, alkalinity, and more.</p>",
+            "text_size": "text-base",
+            "button_label": "Explore",
+            "button_link": "shopify://collections/all",
+            "button_style": "btn--primary",
+            "button_icon": "none"
+          }
+        },
+        "column_BcFyx8": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/imgi_109_f63c6c76aa4c6108f5abc368122267d45852542d_Laboratory-banner-5.png",
+            "title": "Help me find the right product!",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h4",
+            "text": "<p>Get recommendations based on your needs.</p>",
+            "text_size": "text-base",
+            "button_label": "Contact us",
+            "button_link": "shopify://pages/contact",
+            "button_style": "btn--primary",
+            "button_icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "column_nY9WnE",
+        "column_prHXTD",
+        "column_BcFyx8"
+      ],
+      "name": "t:sections.multicolumn.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-10",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "What do you want to measure?",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "",
+        "text_size": "text-base",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--primary",
+        "button_icon": "none",
+        "content_alignment": "left",
+        "show_col_count": false,
+        "show_image": true,
+        "columns_desktop": 3,
+        "column_gap": "large",
+        "row_gap": "inherit",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "show_section_divider": false,
+        "divider_width": "fixed",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "17688123917718a9bb": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "slideshow_q3U4Jn": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_JhU8hg": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "color_scheme": "scheme-inverse",
+            "background": "shopify://shop_images/pexels-valdemaras-d-784301-1647962.jpg",
+            "image_overlay_opacity": 30,
+            "content_position": "bottom-center",
+            "text_alignment": "left",
+            "subheading": "sections.hero.subheading",
+            "title": "sections.hero.title",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h1",
+            "description": "",
+            "description_size": "text-base",
+            "button_label": "LÄs mer om oss",
+            "button_link": "",
+            "button_style": "btn--primary",
+            "button_icon": "none",
+            "enable_preload_image": true
+          }
+        },
+        "slide_U9bPyj": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "color_scheme": "scheme-inverse",
+            "image_overlay_opacity": 30,
+            "content_position": "middle-center",
+            "text_alignment": "center",
+            "subheading": "Modern Elegance",
+            "title": "Spoke Sofa",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "hd1",
+            "description": "",
+            "description_size": "text-base",
+            "button_label": "Shop collection",
+            "button_link": "",
+            "button_style": "btn--primary",
+            "button_icon": "none",
+            "enable_preload_image": false
+          }
+        },
+        "slide_cQ6eF8": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "color_scheme": "scheme-inverse",
+            "image_overlay_opacity": 30,
+            "content_position": "middle-center",
+            "text_alignment": "center",
+            "subheading": "Contemporary Grace",
+            "title": "Dining & Kitchen",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "hd1",
+            "description": "",
+            "description_size": "text-base",
+            "button_label": "Shop collection",
+            "button_link": "",
+            "button_style": "btn--primary",
+            "button_icon": "none",
+            "enable_preload_image": false
+          }
+        }
+      },
+      "block_order": [
+        "slide_JhU8hg",
+        "slide_U9bPyj",
+        "slide_cQ6eF8"
+      ],
+      "settings": {
+        "container": "full",
+        "slide_height": "medium",
+        "show_controls": true,
+        "autoplay": true,
+        "autoplay_delay": 6,
+        "show_text_below": false,
+        "text_alignment_mobile": "center",
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "collection_list_Azm9te": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_d8XGnb": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "agriculture",
+            "title": ""
+          }
+        },
+        "featured_collection_FzRWDn": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "aquarium",
+            "title": ""
+          }
+        },
+        "featured_collection_7cCxEJ": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "pools-spas-and-hot-tubs",
+            "title": ""
+          }
+        },
+        "featured_collection_C6PKH3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "food-and-drink",
+            "title": ""
+          }
+        },
+        "featured_collection_BU4AXG": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "water",
+            "title": ""
+          }
+        },
+        "featured_collection_U4nkWH": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "individual-parameters",
+            "title": ""
+          }
+        },
+        "featured_collection_JV9tDT": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "electrodes-and-probes",
+            "title": "Elektroder och Prober"
+          }
+        },
+        "featured_collection_qdrbEr": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "ph-solutions",
+            "title": "Lösningar"
+          }
+        },
+        "featured_collection_Pa8kFP": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "reagents",
+            "title": "Reagenser"
+          }
+        },
+        "featured_collection_UTWiiY": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "ph-meters",
+            "title": "pH mätare"
+          }
+        },
+        "featured_collection_rkynNN": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "temperature",
+            "title": "Temperatur"
+          }
+        },
+        "featured_collection_8t9tJr": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "calibration",
+            "title": "Kalibrering"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_d8XGnb",
+        "featured_collection_FzRWDn",
+        "featured_collection_7cCxEJ",
+        "featured_collection_C6PKH3",
+        "featured_collection_BU4AXG",
+        "featured_collection_U4nkWH",
+        "featured_collection_JV9tDT",
+        "featured_collection_qdrbEr",
+        "featured_collection_Pa8kFP",
+        "featured_collection_UTWiiY",
+        "featured_collection_rkynNN",
+        "featured_collection_8t9tJr"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-10",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "Find products by subject",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h2",
+        "description": "",
+        "text_size": "text-base",
+        "button_label": "View all products",
+        "button_link": "shopify://collections/all",
+        "button_style": "btn--plain",
+        "button_icon": "caret-right",
+        "card_color_scheme": "",
+        "card_style": "standard",
+        "card_heading_size": "text-base",
+        "card_text_line_limit": "none",
+        "card_image_ratio": "1/1",
+        "card_image_width": "large",
+        "card_image_padding": "none",
+        "rounded_card_image": true,
+        "card_show_border": false,
+        "mobile_layout": "vertical",
+        "columns_desktop": 6,
+        "column_gap": "medium",
+        "row_gap": "medium",
+        "grid_bordered": true,
+        "columns_mobile": "3",
+        "swipe_on_mobile": false,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "featured_collection_bdaamt": {
+      "type": "featured-collection",
+      "blocks": {
+        "collection_ydJPzX": {
+          "type": "collection",
+          "settings": {
+            "collection": "ph-meters",
+            "title": "",
+            "show_banner": false,
+            "color_scheme": "scheme-inverse",
+            "card_link": "",
+            "banner_image": "shopify://shop_images/ab3cc98656480aedcdda7081061f3281444e3738_363a199a8e4cab7aa596aa6d0a6d386c3bdf0a0f_Blog_Graphic_Images_1_1.png",
+            "image_overlay_opacity": 20,
+            "content_position": "split-bottom-button",
+            "content_alignment": "left",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h2",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_style": "btn--primary",
+            "button_icon": "none"
+          }
+        },
+        "collection_E83rKg": {
+          "type": "collection",
+          "settings": {
+            "collection": "conductivity",
+            "title": "",
+            "show_banner": false,
+            "color_scheme": "scheme-inverse",
+            "card_link": "",
+            "image_overlay_opacity": 20,
+            "content_position": "split-bottom-button",
+            "content_alignment": "left",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h2",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_style": "btn--primary",
+            "button_icon": "none"
+          }
+        },
+        "collection_b4a3mb": {
+          "type": "collection",
+          "settings": {
+            "collection": "laboratory",
+            "title": "",
+            "show_banner": false,
+            "color_scheme": "scheme-inverse",
+            "card_link": "",
+            "image_overlay_opacity": 20,
+            "content_position": "split-bottom-button",
+            "content_alignment": "left",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h2",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_style": "btn--primary",
+            "button_icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "collection_ydJPzX",
+        "collection_E83rKg",
+        "collection_b4a3mb"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "Popular products",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h2",
+        "description": "<p>Discover our best-selling products.</p>",
+        "text_size": "text-base",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--underline",
+        "button_icon": "none",
+        "limit": 7,
+        "columns": 5,
+        "column_gap": "medium",
+        "row_gap": "large",
+        "enable_slider": true,
+        "content_overflow": true,
+        "navigation_position": "bottom",
+        "pcard_image_ratio": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "show_progress_bar": true,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "custom_content_JxRy7x": {
+      "type": "custom-content",
+      "blocks": {
+        "image_card_mL7WWJ": {
+          "type": "image_card",
+          "settings": {
+            "color_scheme": "scheme-1",
+            "image": "shopify://shop_images/2096_9c0fc785-1afd-4480-b090-1efe7995d561.jpg",
+            "image_ratio": "1/1",
+            "image_overlay_opacity": 10,
+            "content_position": "bottom-left",
+            "content_alignment": "left",
+            "content_spacing": "small",
+            "content_gap": "fitted",
+            "card_link": "shopify://collections/portable-meters",
+            "subheading": "Portable meters",
+            "subheading_style": "thick-border",
+            "heading": "Browse our full range of handheld testers.",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "hd2",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "button_label": "Shop now",
+            "button_style": "btn--primary",
+            "button_icon": "arrow-right",
+            "show_badge": false,
+            "badge_color_scheme": "scheme-3",
+            "badge_shape": "circle",
+            "badge_position": "bottom-right",
+            "badge_subtext": "Save",
+            "badge_text": "40%",
+            "color_scheme_mobile": "scheme-1",
+            "show_text_below": false,
+            "content_alignment_mobile": "left",
+            "width": "50%",
+            "alignment": "center",
+            "block_custom_class": "",
+            "enable_preload_image": false
+          }
+        },
+        "image_card_Vj69GM": {
+          "type": "image_card",
+          "settings": {
+            "color_scheme": "scheme-2",
+            "image": "shopify://shop_images/home_lab.png",
+            "image_ratio": "1/1",
+            "image_overlay_opacity": 20,
+            "content_position": "bottom-left",
+            "content_alignment": "left",
+            "content_spacing": "small",
+            "content_gap": "fitted",
+            "card_link": "shopify://pages/about",
+            "subheading": "Quality assurance",
+            "subheading_style": "thick-border",
+            "heading": "Tested by professionals",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "hd2",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "<p>Our products are specially developed and rigorously quality-tested together with professional laboratory technicians.</p>",
+            "button_label": "Read more",
+            "button_style": "btn--secondary",
+            "button_icon": "arrow-right",
+            "show_badge": false,
+            "badge_color_scheme": "scheme-8",
+            "badge_shape": "circle",
+            "badge_position": "top-right",
+            "badge_subtext": "Save",
+            "badge_text": "30%",
+            "color_scheme_mobile": "scheme-2",
+            "show_text_below": false,
+            "content_alignment_mobile": "left",
+            "width": "50%",
+            "alignment": "center",
+            "block_custom_class": "",
+            "enable_preload_image": false
+          }
+        }
+      },
+      "block_order": [
+        "image_card_mL7WWJ",
+        "image_card_Vj69GM"
+      ],
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "",
+        "enable_sticky_column": false,
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "",
+        "text_size": "text-base",
+        "column_gap": "2xs",
+        "row_gap": "inherit",
+        "swipe_on_mobile": false,
+        "columns_mobile": "1",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "1768550479c21275a9": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "buttons_with_icon_c8CzHV": {
+      "type": "buttons-with-icon",
+      "blocks": {
+        "button_item_TXLwjF": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "Laboratory Applications",
+            "button_link": "",
+            "icon": "check"
+          }
+        },
+        "button_item_tpCdia": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "In-house manufacturing",
+            "button_link": "",
+            "icon": "check"
+          }
+        },
+        "button_item_wKgxpM": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "Local technicians",
+            "button_link": "",
+            "icon": "check"
+          }
+        },
+        "button_item_Ngk44m": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "Calibration laboratory",
+            "button_link": "",
+            "icon": "check"
+          }
+        }
+      },
+      "block_order": [
+        "button_item_TXLwjF",
+        "button_item_tpCdia",
+        "button_item_wKgxpM",
+        "button_item_Ngk44m"
+      ],
+      "custom_css": [
+        ".section__header {--header-padding-bottom: 2.4rem;}",
+        ".section__heading {max-width: 45rem;}"
+      ],
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-1",
+        "section_header_alignment": "center",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "Your partner in science since 1978",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "item_alignment": "center",
+        "item_button_style": "btn--secondary",
+        "item_button_font": "button",
+        "enable_slider": true,
+        "swipe_on_mobile": true,
+        "show_section_divider": true,
+        "divider_width": "full",
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_aYjfTp": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_4gPrEC": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Din partner inom vetenskap sedan 1978",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h2"
+          }
+        },
+        "text_mziyCR": {
+          "type": "text",
+          "settings": {
+            "text": "<p>As a world-leading developer in pH and titration science, we help professionals and enthusiasts meet their daily testing needs across a wide range of applications. We provide easy-to-use, well-adapted instruments at competitive prices, supported by fast and reliable customer service.</p><p>Our philosophy of staying as close to our customers as possible has resulted in dedicated sales and technical support offices in more than 40 countries. Our ambition to be an innovator has led to many world-first developments in testing instruments, and we continue to innovate and introduce new solutions to the market in direct response to our customers’ needs.</p><p>You will find Hanna instruments used in almost every imaginable application — from hobbyists caring for their home aquariums, to food artisans, and all the way to national and international brands across all industrial sectors. Hanna is a trusted name with over 3,000 products, all manufactured in our ISO 9001-certified European production facility.</p>",
+            "text_size": "text-base",
+            "text_line_limit": "none",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        },
+        "button_QhbfQ6": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "btn--primary",
+            "button_icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "heading_4gPrEC",
+        "text_mziyCR",
+        "button_QhbfQ6"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "",
+        "use_color_scheme_in_container": false,
+        "content_spacing": "standard",
+        "content_alignment": "center",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "multicolumn_Ff4Wbj": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_YWTLnF": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/screenshot_5-6852c62770a84.jpg",
+            "title": "Laboratory Applications",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h4",
+            "text": "<p>Hanna Instruments is your world leading partner in electrochemistry.</p>",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        },
+        "column_AwmLJY": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/imgi_109_f63c6c76aa4c6108f5abc368122267d45852542d_Laboratory-banner-5.png",
+            "title": "We are a manufacturer",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h4",
+            "text": "<p>Fair pricing ensures you know exactly what you’re paying for, with no hidden costs or markups.</p>",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        },
+        "column_j3Pdbn": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/home_lab_3d0d1cd7-2296-4c4b-9cab-5af2fcf1d2c5.png",
+            "title": "Local technical experts",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h4",
+            "text": "<p>All products consider a more holistic environmental impact and are designed for a longer lifetime in a way.</p>",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        },
+        "column_MikwAx": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/pexels-artempodrez-8988548.jpg",
+            "title": "Delivered within 48 hours",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h4",
+            "text": "<p>Committed to sustainable practices, ethical sourcing, and reducing environmental impact.</p>",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "column_YWTLnF",
+        "column_AwmLJY",
+        "column_j3Pdbn",
+        "column_MikwAx"
+      ],
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-10",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "",
+        "text_size": "text-base",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--underline",
+        "button_icon": "none",
+        "content_alignment": "left",
+        "show_col_count": false,
+        "show_image": true,
+        "columns_desktop": 4,
+        "column_gap": "medium",
+        "row_gap": "inherit",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "show_section_divider": false,
+        "divider_width": "fixed",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "1769780351d280b685": {
+      "type": "_blocks",
+      "settings": {}
+    }
+  },
+  "order": [
+    "grid_banner_UneWba",
+    "multicolumn_HBAikL",
+    "17688123917718a9bb",
+    "slideshow_q3U4Jn",
+    "collection_list_Azm9te",
+    "featured_collection_bdaamt",
+    "custom_content_JxRy7x",
+    "1768550479c21275a9",
+    "buttons_with_icon_c8CzHV",
+    "rich_text_aYjfTp",
+    "multicolumn_Ff4Wbj",
+    "1769780351d280b685"
+  ]
+}

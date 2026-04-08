@@ -1,0 +1,34 @@
+{% schema %}
+{
+  "name": "Testimonial",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "review_text",
+      "label": "Review Text",
+      "default": "I have just set up a business from home and need to check the temperature and pH of my products. I rang up Hanna Instruments and the lady I spoke to was extremely helpful. I am really impressed and what a lovely company to deal with."
+    },
+    {
+      "type": "text",
+      "id": "author_name",
+      "label": "Author Name",
+      "default": "Susan Thompkins"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonial",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="row">
+  <div class="col-12">
+    <div class="cms__about_testimonial">
+      <p class="review">{{ section.settings.review_text }}</p>
+      <p class="author">- {{ section.settings.author_name }}</p>
+    </div>
+  </div>
+</div>

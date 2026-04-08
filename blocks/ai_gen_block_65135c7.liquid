@@ -1,0 +1,298 @@
+{% doc %}
+  @prompt
+    Create a gradient overlay effect for the background. The gradient should be customizable with options to adjust the gradient colors, direction (top to bottom, bottom to top, left to right, etc.), and opacity. Make it visually prominent so it's clearly visible over the background image or color.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-gradient-overlay-{{ ai_gen_id }} {
+    display: block;
+    position: relative;
+    width: 100%;
+    min-height: 400px;
+    overflow: hidden;
+  }
+
+  .ai-gradient-overlay__background-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .ai-gradient-overlay__background-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-gradient-overlay__background-color-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-gradient-overlay__gradient-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    {% assign opacity_decimal = block.settings.gradient_opacity | divided_by: 100.0 %}
+    opacity: {{ opacity_decimal }};
+    {% assign color1_rgb = block.settings.gradient_color_1 | color_to_rgb | remove: 'rgb(' | remove: ')' %}
+    {% assign color2_rgb = block.settings.gradient_color_2 | color_to_rgb | remove: 'rgb(' | remove: ')' %}
+    
+    {% if block.settings.gradient_direction == 'top-to-bottom' %}
+      background: linear-gradient(to bottom, rgba({{ color1_rgb }}, 1), rgba({{ color2_rgb }}, 1));
+    {% elsif block.settings.gradient_direction == 'bottom-to-top' %}
+      background: linear-gradient(to top, rgba({{ color1_rgb }}, 1), rgba({{ color2_rgb }}, 1));
+    {% elsif block.settings.gradient_direction == 'left-to-right' %}
+      background: linear-gradient(to right, rgba({{ color1_rgb }}, 1), rgba({{ color2_rgb }}, 1));
+    {% elsif block.settings.gradient_direction == 'right-to-left' %}
+      background: linear-gradient(to left, rgba({{ color1_rgb }}, 1), rgba({{ color2_rgb }}, 1));
+    {% elsif block.settings.gradient_direction == 'diagonal-tl-br' %}
+      background: linear-gradient(135deg, rgba({{ color1_rgb }}, 1), rgba({{ color2_rgb }}, 1));
+    {% elsif block.settings.gradient_direction == 'diagonal-tr-bl' %}
+      background: linear-gradient(225deg, rgba({{ color1_rgb }}, 1), rgba({{ color2_rgb }}, 1));
+    {% elsif block.settings.gradient_direction == 'radial' %}
+      background: radial-gradient(circle, rgba({{ color1_rgb }}, 1), rgba({{ color2_rgb }}, 1));
+    {% endif %}
+  }
+
+  .ai-gradient-overlay__content-{{ ai_gen_id }} {
+    position: relative;
+    z-index: 3;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    text-align: center;
+  }
+
+  .ai-gradient-overlay__heading-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.heading_size }}px;
+    margin: 0 0 16px;
+  }
+
+  .ai-gradient-overlay__text-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.text_size }}px;
+    max-width: 600px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-gradient-overlay__content-{{ ai_gen_id }} {
+      min-height: 300px;
+      padding: 30px 16px;
+    }
+
+    .ai-gradient-overlay__heading-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.heading_size }}px * 0.7);
+    }
+
+    .ai-gradient-overlay__text-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.text_size }}px * 0.9);
+    }
+  }
+{% endstyle %}
+
+<gradient-overlay-{{ ai_gen_id }}
+  class="ai-gradient-overlay-{{ ai_gen_id }}"
+  style="width: {{ block.settings.desktop_width_percent }}%;"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-gradient-overlay__background-{{ ai_gen_id }}">
+    {% if block.settings.background_image %}
+      <img
+        src="{{ block.settings.background_image | image_url: width: 2000 }}"
+        alt="{{ block.settings.background_image.alt | escape }}"
+        loading="lazy"
+        width="{{ block.settings.background_image.width }}"
+        height="{{ block.settings.background_image.height }}"
+        class="ai-gradient-overlay__background-image-{{ ai_gen_id }}"
+      >
+    {% else %}
+      <div class="ai-gradient-overlay__background-color-{{ ai_gen_id }}"></div>
+    {% endif %}
+  </div>
+
+  <div class="ai-gradient-overlay__gradient-{{ ai_gen_id }}"></div>
+
+  <div class="ai-gradient-overlay__content-{{ ai_gen_id }}">
+    {% if block.settings.heading != blank %}
+      <h2 class="ai-gradient-overlay__heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+    {% endif %}
+    {% if block.settings.text != blank %}
+      <div class="ai-gradient-overlay__text-{{ ai_gen_id }}">{{ block.settings.text }}</div>
+    {% endif %}
+  </div>
+</gradient-overlay-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class GradientOverlay{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+      }
+    }
+
+    customElements.define('gradient-overlay-{{ ai_gen_id }}', GradientOverlay{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Gradient overlay",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#1d349a"
+    },
+    {
+      "type": "header",
+      "content": "Gradient"
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_1",
+      "label": "Gradient color 1",
+      "default": "#c4301c"
+    },
+    {
+      "type": "color",
+      "id": "gradient_color_2",
+      "label": "Gradient color 2",
+      "default": "#f4f691"
+    },
+    {
+      "type": "select",
+      "id": "gradient_direction",
+      "label": "Gradient direction",
+      "options": [
+        {
+          "value": "top-to-bottom",
+          "label": "Top to bottom"
+        },
+        {
+          "value": "bottom-to-top",
+          "label": "Bottom to top"
+        },
+        {
+          "value": "left-to-right",
+          "label": "Left to right"
+        },
+        {
+          "value": "right-to-left",
+          "label": "Right to left"
+        },
+        {
+          "value": "diagonal-tl-br",
+          "label": "Diagonal (top-left to bottom-right)"
+        },
+        {
+          "value": "diagonal-tr-bl",
+          "label": "Diagonal (top-right to bottom-left)"
+        },
+        {
+          "value": "radial",
+          "label": "Radial (center outward)"
+        }
+      ],
+      "default": "top-to-bottom"
+    },
+    {
+      "type": "range",
+      "id": "gradient_opacity",
+      "label": "Gradient opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Gradient overlay effect</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Customize the gradient colors, direction, and opacity to create stunning visual effects.</p>"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 20,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text size",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gradient overlay"
+    }
+  ]
+}
+{% endschema %}
